@@ -1,0 +1,49 @@
+CMake如何查找链接库---find_package的使用方法
+
+
+
+
+如果编译软件使用了外部库，事先并不知道它的头文件和链接库的位置。得在编译命令中加上包含它们的查找路径。CMake使用 find_package（）命令来解决这个问题。本文讨论了find_package（）的工作原理。
+
+
+
+一、find_package()的查找*.cmake的顺序：
+1、 find_package(<Name>)命令首先会在模块路径中寻找 Find<name>.cmake，这是查找库的一个典型方式。具体查找路径依次为CMake： 
+变量${CMAKE_MODULE_PATH}中的所有目录。如果没有，然后再查看它自己的模块目录 /share/cmake-x.y/Modules/ （$CMAKE_ROOT的具体值可以通过CMake中message命令输出）。这称为模块模式。
+
+2、 如果没找到这样的文件，find_package()会在~/.cmake/packages/或/usr/local/share/中的各个包目录中查找，寻找<库名字的大写>Config.cmake 或者 <库名字的小写>-config.cmake (比如库Opencv，它会查找/usr/local/share/OpenCV中的OpenCVConfig.cmake或opencv-config.cmake)。**这称为配置模式。
+
+**不管使用哪一种模式，只要找到*.cmake，*.cmake里面都会定义下面这些变量：
+
+<NAME>_FOUND
+<NAME>_INCLUDE_DIRS or <NAME>_INCLUDES
+<NAME>_LIBRARIES or <NAME>_LIBRARIES or <NAME>_LIBS
+<NAME>_DEFINITIONS
+
+
+注意大部分包的这些变量中的包名是全大写的，如 LIBFOO_FOUND ，有些包则使用包的实际大小写，如 LibFoo_FOUND
+
+  如果找到这个包，则可以通过在工程的顶层目录中的CMakeLists.txt 文件添加 include_directories(<NAME>_INCLUDE_DIRS) 来包含库的头文件，添加target_link_libraries(源文件 <NAME>_LIBRARIES)命令将源文件与库文件链接起来。
+
+
+
+
+
+二、使用外部库的方式：
+  为了能支持各种常见的库和包，CMake自带了很多模块。可以通过命令 cmake --help-module-list 得到你的CMake支持的模块的列表，或者直接查看模块路径。比如Ubuntu上，模块的路径是 /usr/share/cmake/Modules/ 。
+
+  让我们以bzip2库为例。CMake中有个FindBZip2.cmake 模块。只要使用 find_package(BZip2) 调用这个模块，cmake会自动给一些变量赋值，然后就可以在CMakelists.txt中使用它们了。变量的列表可以查看cmake模块文件，或者使用命令 cmake –help-module FindBZip2 。
+
+比如一个使用bzip2的简单程序，编译器需要知道 bzlib.h 的位置，链接器需要找到bzip2库（动态链接的话，Unix上是 libbz2.so 类似的文件，Windows上是 libbz2.dll ）。
+
+cmake_minimum_required(VERSION 2.8)
+project(helloworld)
+add_executable(helloworld hello.c)
+find_package(BZip2)
+if (BZIP2_FOUND)
+  include_directories(${BZIP_INCLUDE_DIRS})
+  target_link_libraries (helloworld ${BZIP2_LIBRARIES})
+endif (BZIP2_FOUND)
+
+
+  可以用 cmake 和 make VERBOSE=1 来验证传给编译器和链接器的flag是否正确。也可以用ldd或者dependency walker之类的工具在编译后验证 helloworld 链接的文件。
