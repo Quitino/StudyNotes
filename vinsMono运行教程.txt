@@ -1,0 +1,86 @@
+1.*********************创建ROS工作空间********************
+
+mkdir -p ~/VINSMono_ws/src
+cd ..						//空的依然可以编译他
+catkin_make					//ROS专属的编译命令
+source devel/setup.bash		//在'devel'文件夹里面你可以看到几个setup.*sh文件。
+							//source这些文件中的任何一个都可以将当前工作空间设置在ROS工作环境的最顶层.
+echo $ROS_PACKAGE_PATH		//保证工作空间已配置正确需确保ROS_PACKAGE_PATH环境变量包含你的工作空间目录
+
+2.*********************VINS部分**************************
+运行数据集时：
+/home/fb/VINSMono_ws/src/config/euroc/euroc_config.yaml
+中的load_previous_pose_graph: 0-----改为---->>load_previous_pose_graph: 1
+反之用实际cam和IMU时改为0.
+ roslaunch vins_estimator euroc.launch 
+ roslaunch vins_estimator vins_rviz.launch
+ rosbag play ~/VINSMono_ws/dataset/MH_01_easy.bag 
+
+开三个terminal运行launch文件
+每个命令行之前需要source一下：
+source ~/VINSMono_ws/devel/setup.bash
+
+
+
+3.1.2（可选）可视化基础事实。我们写了一个天真的基准出版商，以帮助您想象真相。它使用一种天真的策略来将VINS与基本事实对齐。只是为了可视化。不适用于学术出版物的定量比较。
+
+    roslaunch benchmark_publisher publish.launch  sequence_name:=MH_05_difficult
+（绿线是VINS结果，红线是地面真相）。
+
+3.1.3（可选）您甚至可以在相机和IMU之间运行没有外部参数的 EuRoC 。我们将在线校准它们。将第一个命令替换为：
+
+    roslaunch vins_estimator euroc_no_extrinsic_param.launch
+该配置文件中没有外部参数。等待几秒钟进行初始校准。有时您不会感觉到任何差异，因为校准很快完成。
+
+3.2*********************地图合并*********************
+
+播放MH_01包后，您可以继续播放MH_02包，MH_03包......系统将根据循环关闭合并它们。
+
+3.3*********************地图重用*********************
+
+3.3.1*********************地图保存*********************
+
+在配置文件中设置pose_graph_save_path（YOUR_VINS_FOLEDER / config / euroc / euroc_config.yaml）。播放MH_01包后，在vins_estimator终端输入s，然后输入。将保存当前姿势图。
+
+3.3.2*********************地图加载*********************
+在执行3.1.1之前将load_previous_pose_graph设置为1。系统将从pose_graph_save_path加载先前的姿势图。然后你可以玩MH_02包。新序列将与先前的姿势图对齐。
+
+
+
+
+
+
+4.****************************用自己的设备跑起来***********************************
+
+假设您熟悉ROS并且可以在ROS主题中获得具有原始度量测量值的摄像头和IMU，您可以按照以下步骤设置设备。
+5.1在配置文件中更改主题名称。图像应超过20Hz，IMU应超过100Hz。图像和IMU都应该具有准确的时间戳。IMU应包含绝对加速度值，包括重力。
+5.2摄像机校准：
+我们支持针孔模型和MEI模型。您可以使用您喜欢的任何工具校准相机。只需以正确的格式在配置文件中写入参数即可。如果您使用滚动快门相机，请仔细校准您的相机，确保重投影误差小于0.5像素。
+5.3 Camera-Imu外在参数：
+	如果您已经看过EuRoC和AR演示的配置文件，您可以发现我们可以在线估算和优化它们。如果您熟悉转换，您可以通过眼睛或手动测量来确定旋转和位置。然后将这些值写入config作为初始猜测。我们的估算器将在线改进外部参数。如果您对相机-IMU转换一无所知，只需忽略外部参数并将estimate_extrinsic设置为2，并在开始时将设备设置旋转几秒钟。当系统成功运行时，我们将保存校准结果。您可以将这些结果用作下次的初始值。如何设置外部参数的示例在extrinsic_parameter_example中
+5.4 时间校准：大多数自制的视觉惯性传感器组是不同步的。您可以将estimate_td设置为1以在线估计相机和IMU之间的时间偏移。
+5.5 滚动快门：对于滚动快门相机（仔细校准，重新投影误差在0.5像素以下），将rolling_shutter设置为1.此外，您应设置滚动快门读数时间rolling_shutter_tr，它来自传感器数据表（通常为0-0.05秒，不是曝光时间） ）。不要尝试网络摄像头，网络摄像头太可怕了。
+5.6其他参数设置：详细信息包含在配置文件中。
+5.7不同设备的性能：
+（全局快门摄像头+同步高端IMU，例如VI-Sensor）>（全局快门摄像头+同步低端IMU）
+>（全局摄像头+非同步高频IMU）>（全局摄像头+非同步低频IMU）>（滚动摄像机+非同步低频IMU）。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
