@@ -1,0 +1,59 @@
+0、相机SDK（切记是深度版本）：https://slightech.github.io/MYNT-EYE-D-SDK/write_imu_params.html
+0.1、demo-github汇总：https://github.com/slightech
+
+0.3、相机SDK安装到系统才能编译orb-slam2:http://doc.myntai.com/resource/sdk/mynt-eye-s-sdk-guide-2.2.2-rc1-zh-Hans/mynt-eye-s-sdk-guide-2.2.2-rc1-zh-Hans/src/sdk/ppa_install_ubuntu.html
+
+
+0.4、相机驱动安装：需要安装ROS版本的！：https://github.com/slightech/MYNT-EYE-ROS-Wrapper
+
+
+0.5、版本安装不要搞错。
+
+1、orb-slam2依赖项安装：https://github.com/raulmur/ORB_SLAM2
+（0）ROS就不说了
+
+（1）pangolin安装==>按照readme安装
+
+（2）对于 pangolin(一个 GUI 库),你需要下载并安装它,它同样是个 cmake 工程,所以我不必谈怎么编译安装的细节了。对于 opencv 和 eigen3,你可以简单的用一行命令来解决:
+
+sudo apt-get install libopencv-dev libeigen3-dev libqt4-dev qt4-qmake libqglviewer-dev libsuitesparse-dev libcxsparse3.1.2 libcholmod-dev
+
+
+（3）安装orb-slam2时候记住要更改build.sh以及build_ros.sh文件里面的make j ==>  make j8  不然全线程容易卡死。
+
+
+(4)编译（ROS）节点时候：
+将包含Examples / ROS / ORB_SLAM2的路径添加到ROS_PACKAGE_PATH环境变量中。打开.bashrc文件并在末尾添加以下行。用您克隆的文件夹ORB_SLAM2替换PATH：
+
+export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM2/Examples/ROS<这句一定要放在最后一行！！！！FUCK！！！>
+
+chmod +x build_ros.sh
+./build_ros.sh
+
+
+
+
+/home/fb/MYNT-EYE-ORB-SLAM2/Examples/ROS
+
+
+1208问题1解决：https://blog.csdn.net/sinat_38343378/article/details/78883919（注意还有评论里面的一条）
+
+logger.h   device.h   utils.h   times.h
+
+====================================================
+247调试总结：
+运行：首先source 相机SDK  运行SDK.luanch文件，IMU的开关在launch文件里面ir_***两行
+
+
+orb这边：运行orb之前也要source一些工作空间。首先看看分辨率是多少 对应分辨更改他的标定参数。然后运行。
+====================================================
+
+
+
+
+
+
+一些网站：
+github:https://github.com/slightech
+官网：http://www.myntai.com/mynteye/depth
+相机SDK包：https://slightech.github.io/MYNT-EYE-D-SDK/build_linux.html
