@@ -1,0 +1,4 @@
+运行：首先source 相机SDK  运行SDK.luanch文件，IMU的开关在launch文件里面ir_***两行
+
+
+orb这边：运行orb之前也要source一些工作空间。首先看看分辨率是多少 对应分辨更改他的标定参数。然后运行。
