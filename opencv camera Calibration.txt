@@ -1,0 +1,20 @@
+可以实现：http://wiki.ros.org/rtabmap_ros/Tutorials/StereoOutdoorMapping
+
+
+https://www.zhihu.com/question/35186064
+http://www.cnblogs.com/gaoxiang12/
+http://www.github.com/EricLYang/courseRepo
+无人驾驶
+http://www.github.com/topics/autonomous-vehicles
+
+=================================
+somethind about Calibration
+1. [opencv camera Calibration](http://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)
+2. [matlab camera Calibration toolbox](http://www.vision.caltech.edu/bouguetj/calib_doc/)
+3. [svo camera Calibration](https://github.com/uzh-rpg/rpg_svo/wiki/Camera-Calibration)
+4. [ros wiki camera Calibration](http://wiki.ros.org/camera_calibration)
+为什么要标定相机呢，因为slam的模型中假设 相机的内参数是已知的，因此有了这个内参数我们才能正确的初始化slam系统。
+=================================
+
+
+
