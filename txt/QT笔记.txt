@@ -1,0 +1,104 @@
+ ui->setupUi(this);  
+    this->setStyleSheet("background-color:rgb(64, 128, 128);");  
+    ui->pb_logo->setStyleSheet("background-color:transparent;background-image:url(:/skin/game_box.png)");  
+    ui->widget->hide();  
+  
+    connect(ui->widget, SIGNAL(sigButtonClick(QString)), this, SLOT(onAllButton(QString)));  
+
+
+
+
+
+
+显示图片：
+https://blog.csdn.net/guanzhen3657/article/details/81812566
+
+http://www.cnblogs.com/s_agapo/archive/2012/03/13/2394176.html
+
+https://blog.csdn.net/qq_37233607/article/details/79303173
+
+https://blog.csdn.net/qq_27901091/article/details/75171378
+
+显示灰度图片
+https://blog.csdn.net/u010682375/article/details/79100913
+
+RGB常用颜色表
+https://blog.csdn.net/daichanglin/article/details/1563299
+灰色颜色更改
+http://myweb.fcu.edu.tw/~mhsung/HomePageDesign/Colors/Rgb1.htm
+
+
+
+UI背景色整体更改
+https://blog.csdn.net/chenyijun/article/details/71122616
+
+https://blog.csdn.net/happyrabbit456/article/details/52786133
+
+
+在构造函数里添加： 
+setAutoFillBackground(true);//必须有这条语句 
+setPalette(QPalette(QColor(250,250,200)));
+
+
+
+
+button颜色更改
+https://blog.csdn.net/hai8902882/article/details/7321390
+
+
+QT设置窗体大小和背景颜色
+https://blog.csdn.net/qq_40388909/article/details/79460175
+
+https://blog.csdn.net/pbl18392021230/article/details/69525219
+
+
+QT图片按钮
+https://blog.csdn.net/SZ_Silence06/article/details/51077992
+https://blog.csdn.net/yansmile1/article/details/52944600
+
+  QT11个心得
+
+https://blog.csdn.net/qq_35705332/article/details/85063316
+
+
+
+string str = filename.toStdString();  // 将filename转变为string类型；
+		
+image = imread(str);
+		//image=imread(fileName.toLatin1().data);
+		
+cvtColor(image, image, CV_BGR2RGB);
+		
+cv::resize(image, image, Size(300, 200));
+		
+
+
+QImage img = QImage((const unsigned char*)(image.data), image.cols, image.rows, QImage::Format_RGB888);
+ 
+		label = new QLabel();
+		
+label->setPixmap(QPixmap::fromImage(img));
+		
+label->resize(QSize(img.width(), img.height()));
+		
+ui.scrollArea->setWidget(label);
+
+
+
+
+label = new QLabel();
+    label->setPixmap(QPixmap::fromImage(image));
+    label->resize(QSize(image.width(),image.height()));
+    ui->scrollImag->setWidget(label);
+
+
+	ui.Qlabel->setPixmap(QPixmap::fromImage(m_test).scaled(ui.src_test->size()));
+	ui.Qlabel->resize(ui.src_test->pixmap()->size());
+
+
+
+		img2label->setWordWrap(true);
+		img2label->setAlignment(Qt::AlignTop);
+
+
+

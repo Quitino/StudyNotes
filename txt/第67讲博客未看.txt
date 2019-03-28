@@ -1,0 +1,52 @@
+
+第6讲
+
+李宏毅： Deep Learning Tutorial
+
+
+o https://blog.csdn.net/u014595019/article/details/52989301
+
+
+o https://blog.csdn.net/u010089444/article/details/76725843
+
+
+o https://www.cnblogs.com/tornadomeet/p/3468450.html
+
+
+o http://jermmy.xyz/2017/12/16/2017-12-16-cnnback-propagation/
+
+
+
+
+
+第7讲
+
+
+
+ http://baijiahao.baidu.com/s?id=1601882944953788623&wfr=spider&for=pc
+
+
+
+o https://blog.csdn.net/guoyunfei20/article/details/78122504
+
+
+
+o https://raw.githubusercontent.com/titu1994/Inception-v4/master/Architectures/Inception-v4.png
+
+
+
+
+第8讲
+o https://blog.csdn.net/guoziqing506/article/details/53019049
+
+
+
+o http://www.iis.sinica.edu.tw/~kevinlin311.tw/cvprw15.pdf
+
+
+
+o https://blog.csdn.net/guoziqing506/article/details/53019049/
+
+
+
+o https://blog.csdn.net/jasonding1354/article/details/38237353

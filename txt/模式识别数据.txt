@@ -1,0 +1,29 @@
+pip install --ignore-installed --upgrade tensorflow-gpu==1.4
+
+pip install --ignore-installed --upgrade tensorflow-gpu==1.0.0
+
+20  81.50%
+30  84.50%
+40  88%
+50  89%
+60  90%
+70  89%
+80  87.5%
+90  87.5%
+100 88%
+
+65  90%
+
+
+
+
+
+
+
+0.8  0.025
+1    0.92
+5    0.915
+10   0.875
+20   0.775
+30   0.725
+40   0.445

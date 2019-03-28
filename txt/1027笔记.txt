@@ -1,0 +1,46 @@
+<div align=center>居中内容</div>    #图片居中代码
+
+
+大津法
+
+
+opencv3 计算机视觉：python语言实现
+
+<center>
+<img src="" width="60%" height="60%">
+
+
+
+
+
+演示环节
+https://github.com/hunkim/DeepLearningZeroToAll/
+
+
+https://blog.csdn.net/u010089444/article/details/76725843
+
+
+
+参考资料
+
+https://blog.csdn.net/u014595019/article/details/52989301
+
+
+https://blog.csdn.net/ccj_ok/article/details/77620738
+
+李宏毅： Deep Learning Tutorial
+
+
+
+一般的神经网络是由一层一层堆叠而成的，但是每层究竟在做啥呢？ 
+数学公式Y = a ( W * X + b )其中Y是输出量，X是输入量，a（）是一个激活函数，W是权重矩阵，b是偏置向量。每一层都是通过该公式简单的得到输出Y。
+
+数学理解 
+通过如下5种对输入空间（输入向量的集合）的操作，完成输入空间—>输出空间的变换(矩阵的行空间到列空间)。 
+注：用“空间”二字是指被分类的并不是单个事物，而是一类事物。空间是指这类事物所有个体的集合。 
+升维/降维
+放大/缩小
+旋转
+平移
+“弯曲”
+         这5种操作中，1,2,3的操作由 W*X完成的，4的操作是由+b完成的，5的操作则是由 a（）来实现。
