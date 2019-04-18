@@ -11,7 +11,7 @@
 
 点击create new Repository以后会出现让你输入一个文件夹的弹窗，直接输入一个文件夹名称即可。点击创建，这时打开Git文件夹里面有一个.git文件夹，但有些人是看不到的，这是因为，默认情况下是隐藏的，自己将自己电脑里的文件显示即可，不会的自行百度。这时，这个Git文件夹就是你的项目仓库。只要将你需要上传的项目放在该文件夹即可。
 
-
+![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118164246610.png)
 
 
 
