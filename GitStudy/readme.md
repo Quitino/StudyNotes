@@ -1,4 +1,9 @@
-## 1.将自己本地文件上传至Github
+## 1.注册和安装git客户端
+[可参照以下这篇博客](http://blog.csdn.net/vipzjyno1/article/details/22098621)
+
+通过命令行，以上的博客也说德很清楚，下面要说的是如何通过Git GUI将自己本地的文件上传至Github上。
+
+## 2.将自己本地文件上传至Github
 
 1）创建.git仓库 
 
