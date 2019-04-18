@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 大挑2019.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="17.5154in" height="7.98334in"
+		viewBox="0 0 1261.11 574.8" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#3f3f3f;font-family:幼圆;font-size:3em;font-weight:bold}
+		.st3 {font-size:1em}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape516-1" v:mID="516" v:groupContext="shape" transform="translate(0.375,-118.06)">
+			<title>工作表.516</title>
+			<desc>针对于目前工业工件表面缺陷检测中采用人工检测方法效率低和漏检的问题设计出一种柱形工件在线探伤系统。 系统采用荧光磁粉对铁磁...</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="630.178" cy="405.46" width="1260.36" height="338.682"/>
+			<rect x="0" y="236.119" width="1260.36" height="338.682" class="st1"/>
+			<text x="55.02" y="163.96" class="st2" v:langID="2052"><v:paragraph v:indentFirst="51.02" v:spLine="-1.7"
+						v:spBefore="12" v:bulletSize="0.277778"/><v:tabList/>针对于目前工业工件表面缺陷检测中，采用人工检测方法效率低和漏检的问<tspan x="4"
+						dy="1.7em" class="st3">题</tspan>，设计出一种柱形工件在线探伤系统。<v:newlineChar/><tspan x="55.02" dy="2.033em" class="st3">系统采用荧光磁粉对铁磁性工件缺陷进行显著性处理</tspan>，同时结合机器视觉、<tspan
+						x="4" dy="1.7em" class="st3">深度学习进行缺陷识别</tspan>。首先通过工件缺陷样本图片学习进行数学建模，然后<tspan x="4" dy="1.7em" class="st3">对采样图片进行预处理消除反光</tspan>、锈迹、暗光等干扰，最后使用深度学习算法<tspan
+						x="4" dy="1.7em" class="st3">进行缺陷检测</tspan>。系统能在工厂流水线上实时检测出裂纹、凹坑、磨损等十几种<tspan x="4" dy="1.7em" class="st3">缺陷并做出识别分类</tspan>，且可迁移性强。<v:newlineChar/><tspan
+						x="55.02" dy="2.033em" class="st3">本系统有效地提高了在工业工件缺陷检测的效率和准确度</tspan>，有效地节省了劳<tspan x="4" dy="1.7em"
+						class="st3">力成本</tspan>，并且目前已初步应用于国防军工厂弹体缺陷检测。</text>		</g>
+	</g>
+</svg>
