@@ -16,19 +16,23 @@
 
 
 2) 完成点击创建以后，会弹出可视化窗：点击Remote--》Add...
+
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118165513900.jpg)
 
 弹出以下框以后输入你Github的用户名（shanerou是我的github名称）和你需要将你本地的项目放在Github的仓库的地址，如我在Github上创建了一个repository名称为Test的，然后添加如下，点击创建，弹出success的框代表创建成功
+
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118165920635.png)
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118170546917.png)
 
 
 
 在Git文件夹下放入我的一个demo：SD_SQList2
+
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118170915571.png)
 
 
 3)按以下步骤操作：
+
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118171724444.png)
 
 
@@ -38,18 +42,21 @@
 
 
 输入你Github的用户名 和密码：
+
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118172535690.png)
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118172619673.png)
 
 
 
 4)点击上传：出现以下弹框则表示上传成功
+
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118172724381.png)
 
 
 
 
 这时到你的Github上去看，将会看到以下dome：
+
 ![image](https://github.com/Quitino/StudyNotes/blob/master/GitStudy/pic/20160118172941514.png)
 
 
